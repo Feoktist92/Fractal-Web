@@ -1,0 +1,53 @@
+.card {
+    display: flex;
+    align-items: center;
+    column-gap: 24px;
+    margin-bottom: 24px;
+
+    @media (max-width: 400px) {
+        flex-direction: column;
+        row-gap: 16px;
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    color: #212830;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 52px;
+    border-radius: 100px;
+    background: #d5e4f7;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    color: #333;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+}
+
+.links {
+    display: flex;
+    column-gap: 16px;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+
+    column-gap: 4px;
+    color: #5558fa;
+}

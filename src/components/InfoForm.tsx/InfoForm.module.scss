@@ -1,0 +1,55 @@
+.form {
+    max-width: 680px;
+    margin-top: 66px;
+
+    label {
+        text-align: left;
+        display: block;
+        color: #333;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+    }
+
+    .textarea {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+        line-height: 20px;
+        color: #333;
+        border-radius: 4px;
+        border: 1px solid rgba(0, 0, 0, 0.16);
+        background: #fff;
+        resize: vertical;
+
+        &::placeholder {
+            color: rgba(0, 0, 0, 0.48);
+        }
+    }
+
+    .form__bottom {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 88px;
+    }
+
+    .characterCount {
+        text-align: right;
+        color: #5558fa;
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 20px;
+    }
+
+    .error {
+        color: red;
+        margin-top: 5px;
+    }
+
+    .errorCount {
+        display: flex;
+        justify-content: space-between;
+    }
+}
