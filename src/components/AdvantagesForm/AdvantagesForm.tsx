@@ -132,6 +132,7 @@ const AdvantagesForm: FC = () => {
                     />
                     <img
                         src={BasketIcon}
+                        className={styles.basketIcon}
                         onClick={() => handleRemoveAdvantage(index)}
                         alt='Корзина'
                     />

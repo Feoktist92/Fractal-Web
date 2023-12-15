@@ -24,6 +24,11 @@
         font-size: 14px;
         line-height: 20px;
 
+        &:focus {
+            outline: #5558fa;
+            border: 1px solid #5558fa;
+        }
+
         &::placeholder {
             color: rgba(0, 0, 0, 0.48);
         }

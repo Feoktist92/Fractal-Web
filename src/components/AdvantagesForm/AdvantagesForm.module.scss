@@ -33,6 +33,11 @@
         font-size: 14px;
         line-height: 20px;
 
+        &:focus {
+            outline: #5558fa;
+            border: 1px solid #5558fa;
+        }
+
         &::placeholder {
             color: rgba(0, 0, 0, 0.48);
         }
@@ -53,10 +58,24 @@
             cursor: pointer;
         }
     }
+    .basketIcon {
+        transition: all 0.2s ease-in;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
 
     .plusIcon {
         margin-top: 8px;
         margin-bottom: 24px;
+        cursor: pointer;
+
+        transition: all 0.2s ease-in;
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 
     .checkboxGroup,
