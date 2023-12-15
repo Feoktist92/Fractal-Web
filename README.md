@@ -1,6 +1,6 @@
-## Тестовое задание в Fractal Web
+# Тестовое задание в Fractal Web
 
-# Стек:
+## Стек:
 
 -React
 -Typescript
