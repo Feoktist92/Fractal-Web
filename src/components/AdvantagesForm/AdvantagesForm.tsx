@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../../redux/store';
@@ -34,6 +34,7 @@ const AdvantagesForm: FC = () => {
         control,
         setError,
         clearErrors,
+        setValue,
         getValues,
     } = useForm<AdvantagesFields>();
 
@@ -60,7 +61,16 @@ const AdvantagesForm: FC = () => {
             return;
         }
         clearErrors(['checkboxOne', 'checkboxTwo', 'checkboxThree']);
-        dispatch(setAdvantagesPage(data));
+
+        const nonEmptyAdvantagesInputs = advantagesInputs.filter(
+            (advantage) => advantage.trim() !== ''
+        );
+        dispatch(
+            setAdvantagesPage({
+                ...data,
+                advantagesInputs: nonEmptyAdvantagesInputs,
+            })
+        );
         navigate('/info');
     };
 
@@ -74,25 +84,25 @@ const AdvantagesForm: FC = () => {
     };
 
     const handleRemoveAdvantage = (index: number) => {
-        const newAdvantages = [...advantagesInputs];
-        newAdvantages.splice(index, 1);
+        const newAdvantages = advantagesInputs.filter((_, i) => i !== index);
         dispatch(
             setAdvantagesPage({
                 ...AdvantageFields,
                 advantagesInputs: newAdvantages,
             })
         );
+        clearErrors(`advantagesInputs.${index}`);
+        setValue(`advantagesInputs.${index}`, '');
     };
 
     const handleChangeAdvantage = (index: number, value: string) => {
         const newAdvantages = [...advantagesInputs];
         newAdvantages[index] = value;
-        dispatch(
-            setAdvantagesPage({
-                ...AdvantageFields,
-                advantagesInputs: newAdvantages,
-            })
-        );
+        const updatedFields = {
+            ...AdvantageFields,
+            advantagesInputs: newAdvantages,
+        };
+        dispatch(setAdvantagesPage(updatedFields));
     };
 
     const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
