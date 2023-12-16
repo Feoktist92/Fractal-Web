@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useEffect } from 'react';
 
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../../redux/store';
